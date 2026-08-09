@@ -25,4 +25,10 @@ describe('AppController', () => {
       });
     });
   });
+
+  describe('favicon', () => {
+    it('should return no content for favicon requests', () => {
+      expect(appController.getFavicon()).toBeUndefined();
+    });
+  });
 });

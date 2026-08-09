@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpCode } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -9,4 +9,8 @@ export class AppController {
   getHello(): { message: string } {
     return this.appService.getHello();
   }
+
+  @Get('favicon.ico')
+  @HttpCode(204)
+  getFavicon(): void {}
 }
